@@ -40,10 +40,6 @@ jobs:
       with:
         name: kibot_output
         path: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
-
-    - name: Testing
-    - run: |
-        ${{github.event}}
   
     - name: Send mail
       uses: dawidd6/action-send-mail@v6
