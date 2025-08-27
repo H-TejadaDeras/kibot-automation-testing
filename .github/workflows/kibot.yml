@@ -40,6 +40,10 @@ jobs:
       with:
         name: kibot_output
         path: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
+
+    - name: Testing
+    - run: |
+        ${{github.event}}
   
     - name: Send mail
       uses: dawidd6/action-send-mail@v6
@@ -61,9 +65,9 @@ jobs:
         # Required sender full name (address can be skipped):
         from: GitHub Actions Testing # <${{secrets.TESTING_FROM_EMAIL}}>
         # Optional plain body:
-        body: TESTING Build job of ${{github.repository}} completed successfully!
+        body: TESTING ${{github.repository}} \n\n ${{github.event}}
         # Optional carbon copy recipients:
-        # cc: 
+        cc: ${{secrets.TESTING_OEM_EMAIL}}
         # Optional blind carbon copy recipients:
         # bcc: 
         # Optional recipient of the email response:
@@ -73,6 +77,6 @@ jobs:
         # Optional converting Markdown to HTML (set content_type to text/html too):
         convert_markdown: true
         # Optional attachments:
-        # attachments: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output.zip
+        attachments: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output.zip
         # Optional priority: 'high', 'normal' (default) or 'low'
         priority: low
