@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Automatic_outputs
-        path: Generated
+        path: $GITHUB_WORKSPACE/*
