@@ -7,7 +7,7 @@ on:
     paths:
       - '*.kicad_sch'
       - '*.kicad_pcb'
-      - 'KiBot/oem_config.kibot.yaml'
+      # - 'KiBot/oem_config.kibot.yaml'
 
   repository_dispatch:
     types: [run_qs_gha]
