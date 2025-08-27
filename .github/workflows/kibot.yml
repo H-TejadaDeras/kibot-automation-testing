@@ -26,7 +26,11 @@ jobs:
       uses: INTI-CMNB/KiBot@v2_k9
       with:
         quickstart: YES
+        config: 'KiBot/oem_config.kibot.yaml'
 
+    # TODO: Delete previous kicad_output files
+    # TODO: Send files via email
+    
     - name: Upload results
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
