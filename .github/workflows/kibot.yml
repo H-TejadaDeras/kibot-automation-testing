@@ -30,6 +30,13 @@ jobs:
         schema: 'testing/testing.kicad_sch'
         board: 'testing/testing.kicad_pcb'
 
+    - name: Troubleshooting
+      run: |
+        #!/bin/bash
+        
+        echo 'Troubleshooting Logs'
+        pwd
+        ls        
     # TODO: Delete previous kicad_output files
     # TODO: Send files via email
     
