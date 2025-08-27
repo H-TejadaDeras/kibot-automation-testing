@@ -4,6 +4,7 @@ name: "KiBot On-Push Actions"
 # events but only for the master branch
 on:
   push:
+  # Add Filters Functionality and ability to get specific path to modified project --------------------------
     # paths:
       # - '*.kicad_sch'
       # - '*.kicad_pcb'
@@ -25,7 +26,7 @@ jobs:
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k9
       with:
-        # quickstart: YES
+      # Remove Hard Coded Paths -----------------------------------------------
         config: 'testing/oem_config.kibot.yaml'
         schema: 'testing/testing.kicad_sch'
         board: 'testing/testing.kicad_pcb'
@@ -33,13 +34,6 @@ jobs:
     - name: KiBot Files Packaging
       run: |
         zip -r kibot_output.zip /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
-    
-    - name: Upload results
-      if: ${{ always() }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: kibot_output
-        path: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
 
   # Send email with kibot files (diff checker and things)
     - name: Send mail
@@ -56,15 +50,15 @@ jobs:
         # Optional (recommended) mail server password:
         password: ${{secrets.HNTD_TESTING_FROM_EMAIL_PASSWORD}}
         # Required mail subject:
-        subject: TESTING Send KiBot GitHub Action Data
+        subject: Automatically Generated KiBot Data - Commit ${{github.event.head_commit.id}}
         # Required recipients' addresses:
         to: ${{github.event.pusher.email}}
         # Required sender full name (address can be skipped):
         from: GitHub Actions Testing <${{secrets.HNTD_TESTING_FROM_EMAIL}}>
         # Optional plain body:
-        body: TESTING KiBot Automatically Generated Data is Attached. This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.head_commit.timestamp}}; Commit ID - ${{github.event.head_commit.id}}; Commit Message - ${{github.event.head_commit.message}}
+        body: KiBot Automatically Generated Data is Attached. This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.head_commit.timestamp}}; Commit ID - ${{github.event.head_commit.id}}; Commit Message - ${{github.event.head_commit.message}}
         # Optional carbon copy recipients:
-        # cc: ${{secrets.TESTING_OEM_EMAIL}}
+        cc: ${{secrets.TESTING_OEM_EMAIL}}
         # Optional blind carbon copy recipients:
         # bcc: 
         # Optional recipient of the email response:
@@ -76,4 +70,4 @@ jobs:
         # Optional attachments:
         attachments: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output.zip
         # Optional priority: 'high', 'normal' (default) or 'low'
-        priority: low
+        priority: normal
