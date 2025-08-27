@@ -29,13 +29,46 @@ jobs:
         config: 'testing/oem_config.kibot.yaml'
         schema: 'testing/testing.kicad_sch'
         board: 'testing/testing.kicad_pcb'
-     
-    # TODO: Delete previous kicad_output files
-    # TODO: Send files via email
     
     - name: Upload results
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:
-        name: Automatic_outputs
+        name: kibot_output
         path: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
+
+    # - name: Send mail
+    #   uses: dawidd6/action-send-mail@v6
+    #   with:
+    #     # Required mail server address if not connection_url:
+    #     server_address: smtp.gmail.com
+    #     # Server port, default 25:
+    #     server_port: 465
+    #     # Optional whether this connection use TLS (default is true if server_port is 465)
+    #     secure: true
+    #     # Optional (recommended) mail server username:
+    #     username: ${{secrets.MAIL_USERNAME}}
+    #     # Optional (recommended) mail server password:
+    #     password: ${{secrets.MAIL_PASSWORD}}
+    #     # Required mail subject:
+    #     subject: TESTING Send KiBot GitHub Action Data
+    #     # Required recipients' addresses:
+    #     to: obiwan@example.com,yoda@example.com
+    #     # Required sender full name (address can be skipped):
+    #     from: GitHub Actions Testing # <${{secrets.TESTING_FROM_EMAIL}}>
+    #     # Optional plain body:
+    #     body: Build job of ${{github.repository}} completed successfully!
+    #     # Optional carbon copy recipients:
+    #     # cc: 
+    #     # Optional blind carbon copy recipients:
+    #     # bcc: 
+    #     # Optional recipient of the email response:
+    #     reply_to: ${{secrets.TESTING_FROM_EMAIL}}
+    #     # Optional unsigned/invalid certificates allowance:
+    #     ignore_cert: true
+    #     # Optional converting Markdown to HTML (set content_type to text/html too):
+    #     convert_markdown: true
+    #     # Optional attachments:
+    #     attachments: attachments.zip,git.diff,./dist/static/*.js
+    #     # Optional priority: 'high', 'normal' (default) or 'low'
+    #     priority: low
