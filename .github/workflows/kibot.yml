@@ -25,7 +25,7 @@ jobs:
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k9
       with:
-        quickstart: YES
+        # quickstart: YES
         config: 'KiBot/oem_config.kibot.yaml'
 
     # TODO: Delete previous kicad_output files
