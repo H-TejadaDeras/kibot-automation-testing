@@ -29,14 +29,7 @@ jobs:
         config: 'testing/oem_config.kibot.yaml'
         schema: 'testing/testing.kicad_sch'
         board: 'testing/testing.kicad_pcb'
-
-    - name: Troubleshooting
-      run: |
-        #!/bin/bash
-        
-        echo 'Troubleshooting Logs'
-        pwd
-        ls        
+     
     # TODO: Delete previous kicad_output files
     # TODO: Send files via email
     
@@ -45,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Automatic_outputs
-        path: /kibot_output
+        path: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
