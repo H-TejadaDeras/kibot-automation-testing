@@ -62,7 +62,7 @@ jobs:
         # Required sender full name (address can be skipped):
         from: GitHub Actions Testing <${{secrets.HNTD_TESTING_FROM_EMAIL}}>
         # Optional plain body:
-        body: TESTING This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.pusher.date}}; Commit ID - ${{github.event.push_id}}; Commit Message - ${{github.event.pusher.message}}
+        body: TESTING KiBot Automatically Generated Data is Attached. This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.head_commit.timestamp}}; Commit ID - ${{github.event.head_commit.id}}; Commit Message - ${{github.event.head_commit.message}}
         # Optional carbon copy recipients:
         # cc: ${{secrets.TESTING_OEM_EMAIL}}
         # Optional blind carbon copy recipients:
