@@ -28,7 +28,7 @@ jobs:
         # quickstart: YES
         config: 'testing/oem_config.kibot.yaml'
         schema: 'testing/testing.kicad_sch'
-        pcb: 'testing/testing.kicad_pcb'
+        board: 'testing/testing.kicad_pcb'
 
     # TODO: Delete previous kicad_output files
     # TODO: Send files via email
