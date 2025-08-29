@@ -36,5 +36,5 @@ jobs:
               fi
             fi
           done
-          echo changed_schematic_path
-          echo changed_pcb_path
+          echo "$changed_schematic_path"
+          echo "$changed_pcb_path"
