@@ -23,6 +23,12 @@ jobs:
         # So we can run a diff between last 2 changes
         fetch-depth: '0'
 
+    - name: Get Changed File Paths
+      run: |
+          echo "${{ toJson(github.event.commits) }}" | jq -r '.[].modified[]' > changed_files.txt
+          cat changed_files.txt
+          echo "changed_files.txt"
+    
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k9
       with:
