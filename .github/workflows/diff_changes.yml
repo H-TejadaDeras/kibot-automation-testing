@@ -27,10 +27,12 @@ jobs:
 
       - name: Get Changed Files
         run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
-
-      - name: Process Changed Files
-        run: |
-          for file in $(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}); do
-          echo "$file was changed"
+          for file in "$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"; do
+            if [[ "$file" == *.kicad_sch ]] || [[ "$file" == *.kicad_pcb ]]; then
+              if [[ "$file" == *.kicad_sch ]]; then
+                changed_schematic_path="$file"
+              else
+                changed_pcb_path="$file"
+              fi
+            fi
           done
