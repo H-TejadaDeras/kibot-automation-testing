@@ -9,6 +9,12 @@ on:
       # - '*.kicad_sch'
       # - '*.kicad_pcb'
       # - 'KiBot/oem_config.kibot.yaml'
+  workflow_dispatch:
+
+# Variable Declarations
+env:
+  changed_schematic_path: __SCAN__
+  changed_pcb_path: __SCAN__
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,17 +31,24 @@ jobs:
 
     - name: Get Changed File Paths
       run: |
-          git fetch origin main
-          git diff --name-only origin/main...HEAD > changed_files.txt
-          cat changed_files.txt
+          for file in $(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}); do
+            if [[ $file == *.kicad_sch ]] || [[ $file == *.kicad_pcb ]], then
+              if [[ $file == *.kicad_sch ]], then
+                changed_schematic_path=$file
+              fi
+              if [[ $file == *.kicad_pcb ]], then
+                changed_pcb_path=$file
+              fi
+            fi
+          done
     
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k9
       with:
       # Remove Hard Coded Paths -----------------------------------------------
         config: 'testing/oem_config.kibot.yaml'
-        schema: 'testing/testing.kicad_sch'
-        board: 'testing/testing.kicad_pcb'
+        schema: $changed_schematic_path
+        board: $changed_pcb_path
 
     - name: KiBot Files Packaging
       run: |
