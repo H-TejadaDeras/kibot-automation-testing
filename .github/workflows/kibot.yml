@@ -32,11 +32,10 @@ jobs:
     - name: Get Changed File Paths
       run: |
           for file in $(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}); do
-            if [[ $file == *.kicad_sch ]] || [[ $file == *.kicad_pcb ]], then
-              if [[ $file == *.kicad_sch ]], then
+            if [[ $file == *.kicad_sch ]] || [[ $file == *.kicad_pcb ]]; then
+              if [[ $file == *.kicad_sch ]]; then
                 changed_schematic_path=$file
-              fi
-              if [[ $file == *.kicad_pcb ]], then
+              else
                 changed_pcb_path=$file
               fi
             fi
