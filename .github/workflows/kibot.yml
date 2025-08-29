@@ -25,8 +25,9 @@ jobs:
 
     - name: Get Changed File Paths
       run: |
-          echo "${{ toJson(github.event.commits) }}" | jq -r '.[].modified[]' > /home/runner/work/kibot-automation-testing/kibot-automation-testing/changed_files.txt
-          cat /home/runner/work/kibot-automation-testing/kibot-automation-testing/changed_files.txt
+          git fetch origin main
+          git diff --name-only origin/main...HEAD > changed_files.txt
+          cat changed_files.txt
     
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k9
