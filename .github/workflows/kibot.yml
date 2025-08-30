@@ -48,8 +48,8 @@ jobs:
       with:
       # Remove Hard Coded Paths -----------------------------------------------
         config: 'testing/oem_config.kibot.yaml'
-        schema: $changed_schematic_path
-        board: $changed_pcb_path
+        schema: "$changed_schematic_path"
+        board: "$changed_pcb_path"
 
     - name: KiBot Files Packaging
       run: |
