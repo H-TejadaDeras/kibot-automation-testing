@@ -52,9 +52,9 @@ jobs:
           # Get all changed .kicad_sch and .kicad_pcb files
           for path in "${changed_files[@]}"; do
             if [[ "$path" == *.kicad_pcb ]]; then
-              changed_pcb_path_list=+("$path")
+              changed_pcb_path_list+=("$path")
             elif [[ "$path" == *.kicad_sch ]]; then
-              changed_schematic_path_list=+("$path")
+              changed_schematic_path_list+=("$path")
             fi
           done
           echo changed_pcb_path_list
