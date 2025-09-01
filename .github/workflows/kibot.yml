@@ -31,17 +31,27 @@ jobs:
 
     - name: Get Changed File Paths
       run: |
-          for file in "$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"; do
-            if [[ "$file" == *.kicad_sch ]] || [[ "$file" == *.kicad_pcb ]]; then
-              if [[ "$file" == *.kicad_sch ]]; then
-                changed_schematic_path="$file"
-              else
-                changed_pcb_path="$file"
+        # Get Changes
+          changed_files="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"
+          echo changed_files
+        
+        detect_kicad_file_changes() {
+            # Check for .kicad_sch or .kicad_pcb file extension
+            for element in "${changed_files[@]}"; do
+              if [[ "$element" == *.kicad_sch ]] || [[ "$element" == *.kicad_pcb ]]; then
+                return 0  # Found
               fi
-            fi
-          done
-          echo "$changed_schematic_path"
-          echo "$changed_pcb_path"
+            done
+            return 1  # Not found
+          }
+        
+        if detect_kicad_file_changes; then
+          echo True
+          # Get all changed .kicad_sch and .kicad_pcb files
+
+        else
+          echo False
+          # if none, then skip kibot actions
     
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k9
