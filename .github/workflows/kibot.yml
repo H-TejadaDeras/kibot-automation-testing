@@ -15,8 +15,6 @@ on:
 env:
   changed_schematic_path: __SCAN__
   changed_pcb_path: __SCAN__
-  changed_schematic_path_list: ()
-  changed_pcb_path_list: ()
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -33,6 +31,10 @@ jobs:
 
     - name: Get Changed File Paths
       run: |
+        # Variable Declarations
+        changed_schematic_path_list: ()
+        changed_pcb_path_list: ()
+
         # Get Changes
           changed_files="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"
           echo $changed_files

@@ -440,6 +440,26 @@
 	)
 	(wire
 		(pts
+			(xy 112.8788 112.6118) (xy 114.1488 112.6118)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08a0dcf4-487f-462e-be39-cba9ba1afe3e")
+	)
+	(wire
+		(pts
+			(xy 91.2888 103.7218) (xy 86.2088 103.7218)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17392137-f35a-4ccd-bb2d-3c64ddecbaf6")
+	)
+	(wire
+		(pts
 			(xy 158.75 80.01) (xy 158.75 77.47)
 		)
 		(stroke
@@ -470,6 +490,16 @@
 	)
 	(wire
 		(pts
+			(xy 126.8488 124.0418) (xy 126.8488 121.5018)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34f3c393-e6a0-4005-aec9-25706bab8328")
+	)
+	(wire
+		(pts
 			(xy 158.75 77.47) (xy 160.02 77.47)
 		)
 		(stroke
@@ -477,6 +507,46 @@
 			(type default)
 		)
 		(uuid "6143cb19-ccba-4ce8-8900-01ad792ca0f8")
+	)
+	(wire
+		(pts
+			(xy 105.2588 115.1518) (xy 100.1788 115.1518)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "616319fa-bc7f-4c70-a7b7-582323ad3bb1")
+	)
+	(wire
+		(pts
+			(xy 98.9088 101.1818) (xy 100.1788 101.1818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "676fca06-006e-4567-b2f4-7a00ac4273aa")
+	)
+	(wire
+		(pts
+			(xy 112.8788 115.1518) (xy 112.8788 112.6118)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c2734e2-bf84-449f-8cf8-9111613209b4")
+	)
+	(wire
+		(pts
+			(xy 100.1788 115.1518) (xy 100.1788 116.4218)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76ecd5e1-e1ad-4a36-892d-3717d5e3a046")
 	)
 	(wire
 		(pts
@@ -490,6 +560,16 @@
 	)
 	(wire
 		(pts
+			(xy 98.9088 103.7218) (xy 98.9088 101.1818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90ecc3ca-befd-40f9-89eb-c7f1f4ce99a4")
+	)
+	(wire
+		(pts
 			(xy 146.05 80.01) (xy 146.05 81.28)
 		)
 		(stroke
@@ -497,6 +577,16 @@
 			(type default)
 		)
 		(uuid "9ce6bb48-98a4-4327-96f0-39e34842d56b")
+	)
+	(wire
+		(pts
+			(xy 126.8488 121.5018) (xy 128.1188 121.5018)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4932358-5ad4-452d-b6b5-6f5023655c39")
 	)
 	(wire
 		(pts
@@ -530,6 +620,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.2288 124.0418) (xy 114.1488 124.0418)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9c9b947-d1a0-49b9-9fe4-594a64e4ba66")
+	)
+	(wire
+		(pts
 			(xy 160.02 91.44) (xy 160.02 92.71)
 		)
 		(stroke
@@ -537,6 +637,367 @@
 			(type default)
 		)
 		(uuid "d7a66cd2-9353-4cec-84c5-eafb20c7cad6")
+	)
+	(wire
+		(pts
+			(xy 86.2088 103.7218) (xy 86.2088 104.9918)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee2565b9-12f6-4e91-98cf-cf921e0234a0")
+	)
+	(wire
+		(pts
+			(xy 114.1488 124.0418) (xy 114.1488 125.3118)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8e4b7a1-6a62-41a8-94f7-6dcd42ba3ed7")
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 128.1188 121.5018 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "043775ff-101e-429f-8cb1-ebc48e61b3c5")
+		(property "Reference" "#PWR012"
+			(at 128.1188 125.3118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 128.1188 116.4218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.1188 121.5018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.1188 121.5018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 128.1188 121.5018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "56a8ec89-eecb-46b5-af08-c24520d1b24f")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 100.1788 101.1818 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05c4dc9b-b27f-4a3b-92a6-3d115097e70a")
+		(property "Reference" "#PWR08"
+			(at 100.1788 104.9918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 100.1788 96.1018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.1788 101.1818 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.1788 101.1818 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 100.1788 101.1818 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e9417539-ea05-4b8c-bf65-6be3165c000f")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 95.0988 103.7218 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2010eb5d-bcf4-41b9-b38a-1b773be15e37")
+		(property "Reference" "D4"
+			(at 93.5113 97.3718 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 93.5113 99.9118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.0988 103.7218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.0988 103.7218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 95.0988 103.7218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 95.0988 103.7218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c3bfdef8-a4cb-42d4-875b-4404883c1c6e")
+		)
+		(pin "2"
+			(uuid "942b8994-eea5-43de-b4b1-1d2fab86616a")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 100.1788 116.4218 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21d65100-e0bd-440c-a0e0-35ca4136766f")
+		(property "Reference" "#PWR09"
+			(at 100.1788 122.7718 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 100.1788 121.5018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.1788 116.4218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.1788 116.4218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 100.1788 116.4218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4edae297-1e1f-4002-b28c-d1acd7bc9425")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 114.1488 112.6118 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "306ce7d6-3887-4558-b531-b7f08cf2d929")
+		(property "Reference" "#PWR010"
+			(at 114.1488 116.4218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 114.1488 107.5318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.1488 112.6118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.1488 112.6118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 114.1488 112.6118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b059537b-b04f-44c8-9b2f-624d05d53a7c")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -748,6 +1209,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 86.2088 104.9918 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7348577b-e1bf-470e-bbd0-61bf0d6e3466")
+		(property "Reference" "#PWR07"
+			(at 86.2088 111.3418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.2088 110.0718 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.2088 104.9918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.2088 104.9918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 86.2088 104.9918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "16ad683a-2edd-4fe6-b943-f8cbd1f51f22")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 154.94 80.01 0)
 		(unit 1)
@@ -892,6 +1419,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 114.1488 125.3118 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "91efbc64-4c8a-4aeb-8968-2573f2e21a29")
+		(property "Reference" "#PWR011"
+			(at 114.1488 131.6618 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 114.1488 130.3918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.1488 125.3118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.1488 125.3118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 114.1488 125.3118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c8d9089-9c6f-4b9f-9955-035aa60a1fcf")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 160.02 92.71 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1017,6 +1610,83 @@
 			(project "testing"
 				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 123.0388 124.0418 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dbdc3b82-94cc-4baf-8a6b-8eea6757c6e2")
+		(property "Reference" "D6"
+			(at 121.4513 117.6918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 121.4513 120.2318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.0388 124.0418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.0388 124.0418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 123.0388 124.0418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 123.0388 124.0418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f582f7c-63f5-45c3-b11d-e18b0b99e0fd")
+		)
+		(pin "2"
+			(uuid "82c82f1a-00c0-4366-8280-758150afaad3")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -1160,6 +1830,83 @@
 			(project "testing"
 				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 109.0688 115.1518 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe1d6b23-c805-4411-a6d9-3d39ccfef02b")
+		(property "Reference" "D5"
+			(at 107.4813 108.8018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 107.4813 111.3418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.0688 115.1518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.0688 115.1518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 109.0688 115.1518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 109.0688 115.1518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "56d1ffac-1762-40eb-b750-17f1704907e0")
+		)
+		(pin "2"
+			(uuid "f54e500f-b03a-4b0a-ae7b-2e530936f109")
+		)
+		(instances
+			(project "testing"
+				(path "/40c976af-6f4f-4a6f-b0b7-e3b228d32fee"
+					(reference "D5")
 					(unit 1)
 				)
 			)
