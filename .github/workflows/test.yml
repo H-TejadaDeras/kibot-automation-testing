@@ -1,0 +1,26 @@
+name: Append to Array Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  append-array:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up and append to array
+        run: |
+          # Define an array
+          my_array=("value1" "value2")
+          
+          # Append a new value to the array
+          my_array+=("value3")
+          
+          # Print the array to verify
+          echo "Array contents: ${my_array[@]}"
+          
+          # Iterate through the array
+          for item in "${my_array[@]}"; do
+            echo "Item: $item"
+          done
