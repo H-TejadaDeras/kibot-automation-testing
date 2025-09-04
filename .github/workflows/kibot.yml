@@ -21,7 +21,7 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   quick:
-    name: "Quick Start (action)"
+    name: "Run KiBot"
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +35,7 @@ jobs:
       run: |
         # Get Changes
           changed_files="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"
-          echo changed_files
+          echo $changed_files
         
         detect_kicad_file_changes() {
             # Check for .kicad_sch or .kicad_pcb file extension
@@ -57,8 +57,8 @@ jobs:
               changed_schematic_path_list+=("$path")
             fi
           done
-          echo "changed_pcb_path_list"
-          echo "changed_schematic_path_list"
+          echo $changed_pcb_path_list
+          echo $changed_schematic_path_list
           # Logic Used to determine paths for kibot
         else
           echo False
@@ -94,13 +94,13 @@ jobs:
   #       # Required mail subject:
   #       subject: Automatically Generated KiBot Data - Commit ${{github.event.head_commit.id}}
   #       # Required recipients' addresses:
-  #       to: ${{github.event.pusher.email}}
+  #       to: ${{github.event.pusher.name}} <${{github.event.pusher.email}}>
   #       # Required sender full name (address can be skipped):
   #       from: GitHub Actions Testing <${{secrets.HNTD_TESTING_FROM_EMAIL}}>
   #       # Optional plain body:
   #       body: KiBot Automatically Generated Data is Attached. This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.head_commit.timestamp}}; Commit ID - ${{github.event.head_commit.id}}; Commit Message - ${{github.event.head_commit.message}}
   #       # Optional carbon copy recipients:
-  #       cc: ${{secrets.TESTING_OEM_EMAIL}}
+  #       cc: Olin Electric Motorsports <${{secrets.TESTING_OEM_EMAIL}}>
   #       # Optional blind carbon copy recipients:
   #       # bcc: 
   #       # Optional recipient of the email response:
