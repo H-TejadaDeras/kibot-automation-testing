@@ -33,6 +33,10 @@ jobs:
 
     - name: Get Changed File Paths
       run: |
+        # Variable Declarations
+        changed_schematic_path_list=${{env.changed_schematic_path_list}}
+        changed_pcb_path_list=${{env.changed_pcb_path_list}}
+
         # Get Changes
           changed_files="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"
           echo $changed_files
@@ -54,13 +58,13 @@ jobs:
             tmp=($changed_files) # literal string to array
             for path in "${tmp[@]}"; do
             if [[ "$path" == *.kicad_pcb ]]; then
-                ${{env.changed_pcb_path_list}}+=("$path")
+                changed_pcb_path_list+=("$path")
             elif [[ "$path" == *.kicad_sch ]]; then
-                ${{env.changed_schematic_path_list}}+=("$path")
+                changed_schematic_path_list+=("$path")
             fi
             done
-            echo $changed_pcb_path_list
-            echo $changed_schematic_path_list
+            echo ${{env.changed_pcb_path_list}}
+            echo ${{env.changed_schematic_path_list}}
             # Logic Used to determine paths for kibot
         else
             echo False
@@ -74,7 +78,7 @@ jobs:
       # Remove Hard Coded Paths -----------------------------------------------
         config: 'kibot/oem_config.kibot.yaml'
         schema: $changed_schematic_path
-        board: $changed_pcb_path
+        board: ${{env.changed_pcb_path_list}}
 
   # Package up all files created by KiBot
     - name: KiBot Files Packaging
