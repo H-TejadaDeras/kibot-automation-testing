@@ -15,8 +15,6 @@ on:
 env:
   changed_schematic_path: __SCAN__
   changed_pcb_path: __SCAN__
-  changed_schematic_path_list: ()
-  changed_pcb_path_list: ()
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,8 +32,8 @@ jobs:
     - name: Get Changed File Paths
       run: |
         # Variable Declarations
-        changed_schematic_path_list=${{env.changed_schematic_path_list}}
-        changed_pcb_path_list=${{env.changed_pcb_path_list}}
+        changed_schematic_path_list=()
+        changed_pcb_path_list=()
 
         # Get Changes
           changed_files="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"
@@ -63,8 +61,8 @@ jobs:
                 changed_schematic_path_list+=("$path")
             fi
             done
-            echo ${{env.changed_pcb_path_list}}
-            echo ${{env.changed_schematic_path_list}}
+            echo changed_pcb_path_list
+            echo changed_schematic_path_list
             # Logic Used to determine paths for kibot
         else
             echo False
