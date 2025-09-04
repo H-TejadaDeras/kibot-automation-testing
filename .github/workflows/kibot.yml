@@ -64,52 +64,54 @@ jobs:
           echo False
           # if none, then skip kibot actions
         fi
-    
-  #   - name: Run KiBot
-  #     uses: INTI-CMNB/KiBot@v2_k9
-  #     with:
-  #     # Remove Hard Coded Paths -----------------------------------------------
-  #       config: 'testing/oem_config.kibot.yaml'
-  #       schema: "$changed_schematic_path"
-  #       board: "$changed_pcb_path"
+  
+  # Actually Run KiBot
+    - name: Run KiBot
+      uses: INTI-CMNB/KiBot@v2_k9
+      with:
+      # Remove Hard Coded Paths -----------------------------------------------
+        config: 'kibot/oem_config.kibot.yaml'
+        schema: $changed_schematic_path
+        board: $changed_pcb_path
 
-  #   - name: KiBot Files Packaging
-  #     run: |
-  #       zip -r kibot_output.zip /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
+  # Package up all files created by KiBot
+    - name: KiBot Files Packaging
+      run: |
+        zip -r kibot_output.zip /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output
 
-  # # Send email with kibot files (diff checker and things)
-  #   - name: Send mail
-  #     uses: dawidd6/action-send-mail@v6
-  #     with:
-  #       # Required mail server address if not connection_url:
-  #       server_address: smtp.gmail.com
-  #       # Server port, default 25:
-  #       server_port: 465
-  #       # Optional whether this connection use TLS (default is true if server_port is 465)
-  #       secure: true
-  #       # Optional (recommended) mail server username:
-  #       username: ${{secrets.HNTD_TESTING_FROM_EMAIL}}
-  #       # Optional (recommended) mail server password:
-  #       password: ${{secrets.HNTD_TESTING_FROM_EMAIL_PASSWORD}}
-  #       # Required mail subject:
-  #       subject: Automatically Generated KiBot Data - Commit ${{github.event.head_commit.id}}
-  #       # Required recipients' addresses:
-  #       to: ${{github.event.pusher.name}} <${{github.event.pusher.email}}>
-  #       # Required sender full name (address can be skipped):
-  #       from: GitHub Actions Testing <${{secrets.HNTD_TESTING_FROM_EMAIL}}>
-  #       # Optional plain body:
-  #       body: KiBot Automatically Generated Data is Attached. This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.head_commit.timestamp}}; Commit ID - ${{github.event.head_commit.id}}; Commit Message - ${{github.event.head_commit.message}}
-  #       # Optional carbon copy recipients:
-  #       cc: Olin Electric Motorsports <${{secrets.TESTING_OEM_EMAIL}}>
-  #       # Optional blind carbon copy recipients:
-  #       # bcc: 
-  #       # Optional recipient of the email response:
-  #       reply_to: ${{secrets.TESTING_FROM_EMAIL}}
-  #       # Optional unsigned/invalid certificates allowance:
-  #       ignore_cert: true
-  #       # Optional converting Markdown to HTML (set content_type to text/html too):
-  #       convert_markdown: true
-  #       # Optional attachments:
-  #       attachments: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output.zip
-  #       # Optional priority: 'high', 'normal' (default) or 'low'
-  #       priority: normal
+  # Send email with kibot files (diff checker and things)
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v6
+      with:
+        # Required mail server address if not connection_url:
+        server_address: smtp.gmail.com
+        # Server port, default 25:
+        server_port: 465
+        # Optional whether this connection use TLS (default is true if server_port is 465)
+        secure: true
+        # Optional (recommended) mail server username:
+        username: ${{secrets.HNTD_TESTING_FROM_EMAIL}}
+        # Optional (recommended) mail server password:
+        password: ${{secrets.HNTD_TESTING_FROM_EMAIL_PASSWORD}}
+        # Required mail subject:
+        subject: Automatically Generated KiBot Data - Commit ${{github.event.head_commit.id}}
+        # Required recipients' addresses:
+        to: ${{github.event.pusher.name}} <${{github.event.pusher.email}}>
+        # Required sender full name (address can be skipped):
+        from: GitHub Actions Testing <${{secrets.HNTD_TESTING_FROM_EMAIL}}>
+        # Optional plain body:
+        body: KiBot Automatically Generated Data is Attached. This is an automatically generated message. Commit Information ... Commit Author - ${{github.event.pusher.name}}; Commit Time - ${{github.event.head_commit.timestamp}}; Commit ID - ${{github.event.head_commit.id}}; Commit Message - ${{github.event.head_commit.message}}
+        # Optional carbon copy recipients:
+        cc: Olin Electric Motorsports <${{secrets.TESTING_OEM_EMAIL}}>
+        # Optional blind carbon copy recipients:
+        # bcc: 
+        # Optional recipient of the email response:
+        reply_to: ${{secrets.TESTING_FROM_EMAIL}}
+        # Optional unsigned/invalid certificates allowance:
+        ignore_cert: true
+        # Optional converting Markdown to HTML (set content_type to text/html too):
+        convert_markdown: true
+        # Optional attachments:
+        attachments: /home/runner/work/kibot-automation-testing/kibot-automation-testing/kibot_output.zip
+        # Optional priority: 'high', 'normal' (default) or 'low'
+        priority: normal
