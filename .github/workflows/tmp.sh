@@ -1,3 +1,6 @@
+changed_schematic_path_list=()
+changed_pcb_path_list=()
+
 # Get Changes
 changed_files='.github/workflows/kibot.yml kibot/oem_config.kibot.yaml testing/testing.kicad_pcb testing/testing.kicad_sch'
 

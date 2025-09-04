@@ -32,8 +32,8 @@ jobs:
     - name: Get Changed File Paths
       run: |
         # Variable Declarations
-        changed_schematic_path_list: ()
-        changed_pcb_path_list: ()
+        changed_schematic_path_list=()
+        changed_pcb_path_list=()
 
         # Get Changes
           changed_files="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})"
